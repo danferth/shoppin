@@ -1,0 +1,22 @@
+//import foundation files
+@import 'lib/foundation/foundation';
+@include foundation-everything;
+//import font awesome
+@import 'lib/fontawesome/font-awesome';
+
+//  create files in lib/ and import them here.
+//    alread created are
+//    - nav for navigation styles
+//    - type for general type
+//    - general for all other styles
+
+//imports
+@import 'lib/loader';
+@import 'lib/type';
+@import 'lib/nav';
+@import 'lib/general';
+
+
+
+
+
