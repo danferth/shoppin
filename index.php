@@ -12,18 +12,20 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/build/scaffold/head.php';
   <div class="cell small-12">
     <h1>tally.enter</h1>
     <input class="tally-input" type="number" pattern="[0-9]*" name="tally" placeholder="0" novalidate/>
-    <ul class="tally-nav button-group">
-      <li><button class="button tally-last"><i class="fa fa-reply"></i></button></li>
-      <li><button class="button tally-add"><i class="fa fa-plus"></i></button></li>
-    </ul>
+    <div class="tally-nav button-group expanded large">
+      <button class="hollow warning button tally-last"><i class="fa fa-reply"></i></button>
+      <button class="hollow success button tally-add"><i class="fa fa-plus"></i></button>
+    </div>
   </div>
   
   <div class="cell small-12">
     <h1>tally.list</h1>
-    <button class="button tally-clear-list"><i class="fa fa-remove"></i><i class="fa fa-list"></i></button>
+    
     <ul class="tally-list">
       <!-- js to put list here -->
     </ul>
+    
+    <button class="hollow alert button expanded large tally-clear-list"><i class="fa fa-remove"></i><i class="fa fa-list"></i></button>
   </div>
 </div>
 <!-- END -->

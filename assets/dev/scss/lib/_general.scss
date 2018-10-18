@@ -1,6 +1,66 @@
 // put general site styles here
+
+h1{
+  font-family:$font-family-monospace;
+  font-size:3rem;
+  text-align:center;
+}
+
+input[type='number']{
+  width:80%;
+  height:auto;
+  font-size:4rem;
+  line-height:4rem;
+  font-family:$font-family-monospace;
+  text-align:right;
+  padding:.25rem 1rem;
+  margin:0 auto;
+  &::placeholder{
+    text-align:center;
+  }
+}
+
 .tally-nav{
-    li{
-        list-style:none;
+  margin-top:1rem;
+}
+
+.tally-list{
+  padding:0;
+  margin:0;
+  li{
+    padding:0;
+    margin:0;
+    list-style:none;
+    .tally-item{
+      width:88vw;
+      height:10vw;
+      padding:1vw 10vw;
+      background:$c-white-2;
+      display:inline-block;
+      font-size:8vw;
+      line-height:1;
+      font-family:$font-family-monospace;
+      text-align:right;
+      vertical-align:top;
+      i{
+        font-size:6vw;
+        margin-right:.75rem;
+      }
+      
     }
+    .tally-remove{
+      width: 10vw;
+      height: 10vw;
+      padding:0;
+      i{
+      }
+    }
+  }
+}
+
+
+.tally-clear-list{
+  i:nth-child(1){
+    margin-right:.5rem;
+  }
 }

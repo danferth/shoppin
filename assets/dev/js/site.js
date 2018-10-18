@@ -27,7 +27,7 @@ var setList = function(){
   localforage.getItem('tally').then(function(tally){
     var list = "";
     for(var i = 0; i < tally.length; i++){
-      list += "<li data-listid='"+i+"'>\n<span class='tally-item'>"+tally[i]+"</span>\n<button class='button tally-remove' data-itemid='"+i+"'><i class='fa fa-remove'></i></button>\n</li>";
+      list += "<li data-listid='"+i+"'>\n<span class='tally-item'><i class='fa fa-dollar'></i>"+tally[i]+"</span>\n<button class='alert button tally-remove' data-itemid='"+i+"'><i class='fa fa-remove'></i></button>\n</li>";
     }
     $('.tally-list').html(list);
   }).catch(function(err){console.log(err);});
