@@ -23,6 +23,18 @@ var getTally = function(array){
   return hold;
 };
 
+var setList = function(){
+  localforage.getItem('tally').then(function(tally){
+    var list = "";
+    for(var i = 0; i < tally.length; i++){
+      list += "<li data-listid='"+i+"'>\n<span class='tally-item'>"+tally[i]+"</span>\n<button class='button tally-remove' data-itemid='"+i+"'><i class='fa fa-remove'></i></button>\n</li>";
+    }
+    $('.tally-list').html(list);
+  }).catch(function(err){console.log(err);});
+};
+
+
+
 
 localforage.keys().then(function(keys){
   if(keys == 'tally'){
@@ -31,11 +43,9 @@ localforage.keys().then(function(keys){
       console.log(tally);
     });
   }
-}).catch(function(err){
-  console.log(err);
-});
+}).catch(function(err){console.log(err);});
 
-
+setList();
 
 
 
@@ -45,34 +55,27 @@ localforage.keys().then(function(keys){
 $('.tally-add').on('click', function(e){
 
   if($('.tally-input').val()){
-  var iv = $('.tally-input').val();
+    var iv = $('.tally-input').val();
   
-  localforage.keys().then(function(keys){
+    localforage.keys().then(function(keys){
+    
     if(keys == 'tally'){
-      console.log('tally exsist');
       localforage.getItem('tally').then(function(item){
         item.push(iv);
         getTally(item);
         localforage.setItem('tally', item).then(function(value){
-          console.log(value);
-        }).catch(function(err){
-          console.log(err);
-        });
-      }).catch(function(err){
-        console.log(err);
-      });
+          setList();
+        }).catch(function(err){console.log(err);});
+      }).catch(function(err){console.log(err);});
     }else{
       localforage.setItem('tally', [iv]).then(function(value){
-        console.log(value);
         getTally(value);
-        console.log('tally did not exsist');
-      }).catch(function(err){
-        console.log(err);
-      });
+        setList();
+      }).catch(function(err){console.log(err);});
     }
-  }).catch(function(err){
-      console.log(err);
-    });
+  }).catch(function(err){console.log(err);});
+  
+    
   }else{
     console.log('tally-input was empty');
   }
@@ -85,9 +88,8 @@ $('.tally-clear-list').on('click', function(e){
   localforage.clear().then(function(){
     console.log('db clear');
     $('.tally-input').blur().val('').attr('placeholder', '0');
-  }).catch(function(err){
-    console.log(err);
-  });
+    $('.tally-list li').remove();
+  }).catch(function(err){console.log(err);});
 });
   
   
@@ -107,19 +109,31 @@ $('.tally-last').on('click', function(e){
         localforage.setItem('tally', tally).then(function(){
           localforage.getItem('tally').then(function(tally){
             getTally(tally);
-          }).catch(function(err){
-            console.log(err);
-          });
-        }).catch(function(err){
-            console.log(er);
-          });
-        }).catch(function(err){
-          console.log(err);
-      });
+            setList();
+          }).catch(function(err){console.log(err);});
+        }).catch(function(err){console.log(er);});
+      }).catch(function(err){console.log(err);});
     }
   });
   
 }); 
+
+
+$('.tally-list').on('click', '.tally-remove', function(e){
+  var id = $(this).data('itemid');
+  localforage.getItem('tally').then(function(tally){
+    tally.splice(id, 1);
+    localforage.setItem('tally', tally).then(function(key){
+      getTally(key);
+      setList();
+    }).catch(function(err){console.log(err);});
+  }).catch(function(err){console.log(err)});
+});
+
+
+
+
+
 
 
 

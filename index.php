@@ -15,7 +15,6 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/build/scaffold/head.php';
     <ul class="tally-nav button-group">
       <li><button class="button tally-last"><i class="fa fa-reply"></i></button></li>
       <li><button class="button tally-add"><i class="fa fa-plus"></i></button></li>
-      <li><button class="button tally-list"><i class="fa fa-list"></i></button></li>
     </ul>
   </div>
   
@@ -23,10 +22,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/build/scaffold/head.php';
     <h1>tally.list</h1>
     <button class="button tally-clear-list"><i class="fa fa-remove"></i><i class="fa fa-list"></i></button>
     <ul class="tally-list">
-      <li>
-        <span class="tally-item">10</span>
-        <button class="button tally-remove"><i class="fa fa-remove"></i></button>
-      </li>
+      <!-- js to put list here -->
     </ul>
   </div>
 </div>
