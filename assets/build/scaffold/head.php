@@ -48,11 +48,11 @@ if($hasForm){
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
         <link rel="manifest" href="/assets/favicons/site.webmanifest">
-        <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#e5b02a">
+        <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#749d25">
         <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
-        <meta name="msapplication-TileColor" content="#ffc40d">
+        <meta name="msapplication-TileColor" content="#00aba9">
         <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
-        <meta name="theme-color" content="#f8ebc9">
+        <meta name="theme-color" content="#99d22c">
         <!-- ***********END FAVICON SETTINGS****************** -->
         
         <!-- Humans.txt-->

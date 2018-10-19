@@ -1,9 +1,12 @@
 // put general site styles here
-
+.cell{
+  height:100vh !important;
+}
 h1{
   font-family:$font-family-monospace;
   font-size:3rem;
   text-align:center;
+  margin-top:10vh;
 }
 
 input[type='number']{

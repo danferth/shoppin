@@ -85,11 +85,20 @@ $('.tally-add').on('click', function(e){
 
 
 $('.tally-clear-list').on('click', function(e){
-  localforage.clear().then(function(){
-    console.log('db clear');
-    $('.tally-input').blur().val('').attr('placeholder', '0');
-    $('.tally-list li').remove();
-  }).catch(function(err){console.log(err);});
+  swal({
+    title: 'Delete tally?',
+    type: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'yes!'
+  }).then(function(result){
+    if(result.value){
+      localforage.clear().then(function(){
+        console.log('db clear');
+        $('.tally-input').blur().val('').attr('placeholder', '0');
+        $('.tally-list li').remove();
+      }).catch(function(err){console.log(err);});
+    }
+  });
 });
   
   
